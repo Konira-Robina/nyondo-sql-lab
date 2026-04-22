@@ -41,3 +41,18 @@ Output:
  Output:
   [(1, 'Cement (bag)', 'Portland cement 50kg bag', 38000.0), (2, 'Iron Sheet 3m', 'Gauge 30 roofing sheet 3m long', 110000.0), (3, 'Paint 5L', 'Exterior wall paint white 5L', 60000.0), (4, 'Nails 1kg', 'Common wire nails 1kg pack', 12000.0), (5, 'Timber 2x4', 'Pine timber plank 2x4 per metre', 25000.0), (6, 'Cement (bag)', 'Portland cement 50kg bag', 35000.0), (7, 'Iron Sheet 3m', 'Gauge 30 roofing sheet 3m long', 110000.0), (8, 'Paint 5L', 'Exterior wall paint white 5L', 60000.0), (9, 'Nails 1kg', 'Common wire nails 1kg pack', 12000.0), (10, 'Timber 2x4', 'Pine timber plank 2x4 per metre', 25000.0)] 
 
+
+# Task 3
+
+Why attack 1 worked
+ This attack works because the condition OR 1=1 is always true. When it is added to the query, it makes the WHERE clause always evaluate to true, so the database returns all products instead of filtering by name. The -- symbol comments out the rest of the query, preventing any errors.
+
+Why attack 2 worked
+ This attack works because the -- symbol comments out the password part of the query. The database only checks the username, which is set to admin, and ignores the password completely. As a result, the attacker is able to log in as admin without providing a valid password.
+
+Why attack 3 worked
+ This attack works because the condition '1'='1' is always true. By injecting this into both the username and password fields, the WHERE clause becomes true for all records. The database then returns the first user it finds, allowing login without valid credentials.
+
+Why attack 4 worked
+ This attack works because the UNION statement allows the attacker to combine results from another table with the original query. By selecting columns from the users table, the attacker is able to retrieve usernames and passwords through the product search. This exposes sensitive data that should not be accessible.
+"""
