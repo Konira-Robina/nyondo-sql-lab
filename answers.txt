@@ -59,3 +59,17 @@ Why attack 4 worked
  # Task 4
 
 Parameterized queries prevent SQL injection because user input is treated as data rather than part of the SQL command. Unlike f-strings, which directly insert user input into the query, parameterized queries send the SQL and the input separately to the database. This prevents malicious input from changing the structure of the query. As a result, injection attacks fail and return no data.
+
+
+# Task 5
+
+Test 1: [(1, 'Cement (bag)', 'Portland cement 50kg bag', 38000.0), (6, 'Cement (bag)', 'Portland cement 50kg bag', 35000.0), (11, 'Cement (bag)', 'Portland cement 50kg bag', 35000.0)]
+Invalid name
+Test 2: None
+Invalid name
+Test 3: None
+Test 4: (1, 'admin', 'admin123', 'admin')
+Invalid password
+Test 5: None
+Invalid username
+Test 6: None
